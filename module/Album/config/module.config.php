@@ -6,13 +6,16 @@
 
 namespace Album;
 
+use Interop\Container\ContainerInterface;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'controllers' => [
         'factories' => [
-            Controller\AlbumController::class => InvokableFactory::class,
+            Controller\AlbumController::class => function(ContainerInterface $container) {
+                return new Controller\AlbumController($container);
+            },
         ],
     ],
     'router' => [
@@ -32,6 +35,13 @@ return [
                 ],
             ],
         ],
+    ],
+    'service_manager' => [
+        'factories' => [
+            Model\Album::class => function(ContainerInterface $container) {
+                return new Model\Album($container);
+            },
+        ]
     ],
     'view_manager' => [
         'template_path_stack' => [
