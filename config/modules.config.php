@@ -15,5 +15,6 @@ return [
     'Zend\Validator',
     'Application',
     'Album',
-    'Products'
+    'Products',
+    'Item',
 ];
