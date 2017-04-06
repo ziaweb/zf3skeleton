@@ -8,6 +8,7 @@ class ProductsController extends AbstractActionController
 {
     public function indexAction()
     {
+        echo "Hello world";
     }
 
     public function addAction()
