@@ -2,25 +2,21 @@
 
 namespace Products;
 
-use Zend\Router\Http\Segment;
+use Zend\Router\Http\Literal;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'controllers' => [
         'factories' => [
-            Controller\AlbumController::class => InvokableFactory::class,
+            Controller\ProductsController::class => InvokableFactory::class,
         ],
     ],
     'router' => [
         'routes' => [
             'products' => [
-                'type'    => Segment::class,
+                'type'    => Literal::class,
                 'options' => [
-                    'route' => '/products[/:action[/:id]]',
-                    'constraints' => [
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ],
+                    'route' => '/products',
                     'defaults' => [
                         'controller' => Controller\ProductsController::class,
                         'action'     => 'index',
