@@ -21,7 +21,8 @@
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Album\\": "module/Album/src/",
-            "Products\\": "module/Products/src"
+            "Products\\": "module/Products/src",
+             "Item\\": "module/Item/src"
         }
     },
     "autoload-dev": {
