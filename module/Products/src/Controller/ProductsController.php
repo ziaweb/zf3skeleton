@@ -8,7 +8,7 @@ class ProductsController extends AbstractActionController
 {
     public function indexAction()
     {
-        echo "Hello world"; exit();
+        return new ViewModel();
     }
 
     public function addAction()
