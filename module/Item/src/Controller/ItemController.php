@@ -8,10 +8,14 @@ use Zend\View\Model\ViewModel;
 class ItemController extends AbstractActionController
 {
 
+    private $ItemModle;
+
     public function indexAction() {
-     $this->view->data['pass_one_thing'] = $this->model1->pass_all_mangoes();
-$this->view->data['pass_another_thing'] = $this->model2->pass_all_oranges();
-$this->load->view('viewfile', $data);
+
+          return[
+            'date' => date('M d, Y - H:i:s'),
+            'date1' => '$this->ItemModle',
+        ];
     }
 
     public function addAction() {
